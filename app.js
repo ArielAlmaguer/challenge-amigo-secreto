@@ -1,6 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
 let listaAmigos = [];
+let amigo = "";
 
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
@@ -19,9 +20,9 @@ function sortearAmigo(){
 function agregarAmigo(){
     if(document.getElementById("amigo").value != ""){
         document.querySelector("#amigo").setAttribute("active","true");
-        let amigo = (document.getElementById("amigo").value);
-        amigos.push(amigo);
-
+        amigo = (document.getElementById("amigo").value);
+        console.log(amigo);
+        nuevoAmigo(amigo, amigos);
         //Mostrar los datos de la lista amigos en vertical
         asignarTextoElemento("#listaAmigos",amigos);
         //llama a la funcion que convierte datos en lista html
@@ -38,7 +39,6 @@ function agregarAmigo(){
 
 function limpiarCaja() {
     document.querySelector("#amigo").value= "";
-
 }
 
 function limpiarLista() {
@@ -54,4 +54,12 @@ function listaVertical(arreglo) {
     //Crea una sola cadena de texto que se mostrara como cadena
     listaAmigos = listaAmigos.join("")
     listaAmigos = (`<ol>${listaAmigos}</ol>`);
+}
+
+function nuevoAmigo(amigo, amigos) {
+    if (amigos.includes(amigo)) {
+        return alert("El amigo ya está en la lista.");
+    } else {
+        return amigos.push(amigo);
+    }
 }
