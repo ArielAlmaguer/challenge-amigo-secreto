@@ -11,13 +11,9 @@ function asignarTextoElemento(elemento, texto) {
 function sortearAmigo(){
     if (amigos != "") {
         let numeroAmigo = parseInt(Math.floor(Math.random()*amigos.length));
-        console.log(numeroAmigo);
         asignarTextoElemento("#resultado",`El amigo secreto sorteado es: ${amigos[numeroAmigo]}`);
         limpiarLista();
-    } else {
-        
     }
-
 }
 
 function agregarAmigo(){
@@ -28,12 +24,8 @@ function agregarAmigo(){
 
         //Mostrar los datos de la lista amigos en vertical
         asignarTextoElemento("#listaAmigos",amigos);
-        //llama a la funcion que convierte agrega los separadores de linea
+        //llama a la funcion que convierte datos en lista html
         listaVertical(amigos);
-        //Crea una sola cadena de texto que se mostrara como cadena
-        listaAmigos = listaAmigos.join("")
-        listaAmigos = (`<ol>${listaAmigos}</ol>`);
-
         asignarTextoElemento("#listaAmigos",listaAmigos);
         listaAmigos = [];
         limpiarCaja();
@@ -59,4 +51,7 @@ function listaVertical(arreglo) {
             let element = arreglo[index];
             listaAmigos.push(`<li>${element}</li>`);
     }
+    //Crea una sola cadena de texto que se mostrara como cadena
+    listaAmigos = listaAmigos.join("")
+    listaAmigos = (`<ol>${listaAmigos}</ol>`);
 }
