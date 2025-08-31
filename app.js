@@ -32,6 +32,7 @@ function agregarAmigo(){
         listaVertical(amigos);
         //Crea una sola cadena de texto que se mostrara como cadena
         listaAmigos = listaAmigos.join("")
+        listaAmigos = (`<ol>${listaAmigos}</ol>`);
 
         asignarTextoElemento("#listaAmigos",listaAmigos);
         listaAmigos = [];
