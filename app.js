@@ -21,7 +21,7 @@ function agregarAmigo(){
     if(document.getElementById("amigo").value != ""){
         document.querySelector("#amigo").setAttribute("active","true");
         amigo = (document.getElementById("amigo").value);
-        console.log(amigo);
+        //llama a la funcion que agrega un nuevo amigo al arreglo amigos
         nuevoAmigo(amigo, amigos);
         //Mostrar los datos de la lista amigos en vertical
         asignarTextoElemento("#listaAmigos",amigos);
